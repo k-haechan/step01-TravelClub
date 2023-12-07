@@ -1,6 +1,7 @@
 package io.hc.java.travelClub;
 
 import io.hc.java.travelClub.ui.menu.ClubMenu;
+import io.hc.java.travelClub.util.DateUtil;
 
 public class StoryAssistant {
     private void startStory() {
