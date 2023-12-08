@@ -35,8 +35,10 @@ public class ClubMenu {
 
                     break;
                 case 5:
+                    console.modify();
                     break;
                 case 6:
+                    console.remove();
                     break;
                 case 0:
                     return;

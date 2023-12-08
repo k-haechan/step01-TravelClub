@@ -53,7 +53,14 @@ public class ClubServiceLogic implements ClubService {
 
     @Override
     public void modify(TravelClub modifyClub) {
-
+        int foundIndex=0;
+        for(int i=0;i<clubs.length;i++) {
+            if(clubs[i].getId().equals(modifyClub.getId())) {
+                foundIndex=i;
+                break;
+            }
+        }
+        this.clubs[foundIndex]=modifyClub;
     }
 
     @Override
