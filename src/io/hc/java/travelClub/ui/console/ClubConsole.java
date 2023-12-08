@@ -120,6 +120,14 @@ public class ClubConsole {
     }
 
     public void remove() {
+        TravelClub targetClub = findOne();
 
+        String confirmStr = consoleUtil.getValueOf("Remove this Club? (Y:yes, N:no)");
+        if(confirmStr.toLowerCase().equals("y")||confirmStr.toLowerCase().equals("yes")) {
+            System.out.println("Remove club --> " + targetClub.getClubName());
+            clubService.remove(targetClub.getId());
+        }else {
+            System.out.println("Remove cancelled, your club is safe." + targetClub.getClubName());
+        }
     }
 }

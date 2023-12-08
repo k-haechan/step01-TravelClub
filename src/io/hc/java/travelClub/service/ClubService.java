@@ -9,6 +9,6 @@ public interface ClubService {
     TravelClub findById(String clubId);
 
     void modify(TravelClub modifyClub);
-    void remove(TravelClub clubId);
+    void remove(String clubId);
 
 }

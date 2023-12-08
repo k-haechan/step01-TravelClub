@@ -20,7 +20,7 @@ public class TravelClub {
     public TravelClub(String clubName, String intro) {
         this();
         setClubName(clubName);
-        this.intro = intro;
+        setIntro(intro);
         this.foundationDay=DateUtil.today();
     }
 
@@ -41,7 +41,9 @@ public class TravelClub {
     public void setIntro(String intro) {
         if(intro.length()<MINIMUM_INTRO_LENGTH) {
             System.out.println("Club intro should be longer than " + MINIMUM_INTRO_LENGTH);
+            return;
         }
+        this.intro = intro;
     }
 
     public String getIntro() {

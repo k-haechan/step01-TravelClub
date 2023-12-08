@@ -64,7 +64,20 @@ public class ClubServiceLogic implements ClubService {
     }
 
     @Override
-    public void remove(TravelClub clubId) {
+    public void remove(String clubId) {
+        int foundIndex=0;
+        for(int i=0;i<clubs.length;i++) {
+            if(clubs[i].getId().equals(clubId)) {
+                foundIndex=i;
+                break;
+            }
+        }
+        // 예외처리는 필요없다. 이미 그것은 ClubConsole에서 처리하므로 여기선 구현만!
 
+
+        for(int i=foundIndex;i<this.index+1;i++) {
+            clubs[i] = clubs[i+1];
+        }
+        clubs[index--]=null;
     }
 }
