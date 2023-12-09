@@ -2,6 +2,7 @@ package io.hc.java.travelClub.ui.console;
 
 import io.hc.java.travelClub.entity.TravelClub;
 import io.hc.java.travelClub.service.ClubService;
+import io.hc.java.travelClub.service.ServiceLogicLifeCycler;
 import io.hc.java.travelClub.service.logic.ClubServiceLogic;
 import io.hc.java.travelClub.ui.menu.ClubMenu;
 import io.hc.java.travelClub.util.ConsoleUtil;
@@ -13,8 +14,9 @@ public class ClubConsole {
 
     public ClubConsole() {
         this.consoleUtil = new ConsoleUtil();
-        // 이후 변경될 코드...
-        this.clubService = new ClubServiceLogic();
+        // clubConsole은 clubServiceLogic을 모른다. -> 인터페이스를 통한 접근이기 때문.
+        // 그런데 왜 인터페이스를 생성하는 방법도 따로 정의했는가? 매번 인터페이스 객체를 새로 생성하면 무결성에 문제가 생길 수밖에 없다.
+        this.clubService = ServiceLogicLifeCycler.getUniqueInstance().getClubService();
     }
 
     public void register() {
