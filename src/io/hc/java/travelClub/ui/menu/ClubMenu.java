@@ -19,7 +19,6 @@ public class ClubMenu {
             displayMenu();
             inputNumber = selectMenu();
 
-            System.out.println(inputNumber);
             switch (inputNumber) {
                 case 1:
                     console.register();
